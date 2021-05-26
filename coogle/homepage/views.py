@@ -1,12 +1,12 @@
 from django.http import response
 from django.shortcuts import HttpResponse, render
-from eunjeon import Mecab
+from konlpy.tag import Mecab
 from gensim import models
 from elasticsearch import Elasticsearch 
 
 client = Elasticsearch('101.101.162.137:9200')
 tagger = Mecab()
-review_only_model = models.fasttext.load_facebook_model("D:/embedding/word-embeddings/word-embeddings/fasttext/final_review.bin")
+review_only_model = models.fasttext.load_facebook_model("/home/duduzi/final_review.bin")
 stop_tags = ['JKS','JKC','JKG','JKO','JKB','JKV','JKQ','JX','JC',
              'EP','EF','EC','ETN','ETM','XSN','XSV','XSA',
              'SF','SE','SSO','SSC','SC','SY']
