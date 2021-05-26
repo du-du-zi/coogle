@@ -1,0 +1,161 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.mainLoginInput {
+  height: 40px;
+  padding: 0px;
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.mainLoginInput::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(9, 40%, 60%);
+}
+
+.mainLoginInput::-moz-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(9, 40%, 60%);
+}
+
+.mainLoginInput:-ms-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: hsl(9, 40%, 60%);
+}
+
+h1 {
+  text-align: center;
+  font-size: 100px;
+  margin-top: 230px;
+}
+
+h1 span:nth-child(1) {
+  color: #4285f4;
+}
+
+h1 span:nth-child(2) {
+  color: #ea4335;
+}
+
+h1 span:nth-child(3) {
+  color: #fbbc05;
+}
+
+h1 span:nth-child(4) {
+  color: #4285f4;
+}
+
+h1 span:nth-child(5) {
+  color: #34a853;
+}
+
+h1 span:nth-child(6) {
+  color: #ea4335;
+}
+
+.search {
+  position: relative;
+  text-align: center;
+  width: 650px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+  padding: 10px 10px;
+  font-family: fontAwesome;
+}
+
+.fa-search {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  margin: 0;
+  color: gray;
+}
+
+.fa-keyboard {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: gray;
+}
+
+.fa-microphone {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: blue;
+}
+
+.boxs {
+  width: 130px;
+  height: 70px;
+}
+
+#main {
+  padding: 10px 10px 10px 40px;
+  border-radius: 20px;
+  margin-top: 0px;
+}
+
+#sub1 {
+  border-radius: 5px;
+  background-color: gray;
+  background-color: rgba(220, 220, 220, 0.2);
+  border: 0px;
+  position: relative;
+  right: 80px;
+  width: 130px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: gray;
+}
+
+#sub2 {
+  border-radius: 5px;
+  background-color: gray;
+  background-color: rgba(220, 220, 220, 0.2);
+  border: 0px;
+  position: relative;
+  left: 60px;
+  bottom: 62px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: gray;
+}
+
+.wrap {
+  width: 100%;
+  margin: auto;
+}
+
+.note {
+  width: 500px;
+  position: relative;
+
+  font-family: "Nanum Gothic", sans-serif;
+  color: gray;
+}
+
+.ex {
+  font-size: 12px;
+  color: rgb(49, 46, 46);
+}

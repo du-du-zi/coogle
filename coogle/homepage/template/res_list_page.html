@@ -1,0 +1,114 @@
+{% load static %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- JS -->
+    <link rel="stylesheet" href='{% static "css/style2.css" %}' type="text/css" />
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Nanum+Pen+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <title>{{query}}</title>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <h1>
+            <span>C</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </h1>
+
+        <br></br>
+        <center>
+            <form method=get action="/page" target="_blank">
+                <table bgcolor="#FFFFFF">
+                    <tr>
+                        <td>
+                            <input type=text size=40 maxlength=300 placeholder=" 검색 문장 입력" style=font-size:18pt value=""
+                                name="search_key" />
+                            <input type=hidden name=ie value=utf-8 />
+                            <input type=hidden name=oe value=utf-8 />
+                            <input type=hidden name=hl value=ko />
+                            <input type=submit name=btnG style=font-size:18pt value="Coogle 검색" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+        <br></br>
+
+        <div id="cards-box" class="card-columns">
+            {% autoescape off %}
+            {% for res_info in res_view_list %}
+            <div class="card">
+                <div class="card-body">
+                    <div class="res_name"><span class='badge'>{{forloop.counter}}</span>
+                        {{res_info.res_name}}</div>
+                    <p class="res_address"><i class="fas fa-map-marker-alt"></i>{{res_info.res_addr}}</p>
+                    <hr />
+
+                    {% for highlight in res_info.rev_highlight %}
+                    <div class="review01">{{highlight}}
+                        <button onclick="myFunction('{{res_info.res_name}}{{forloop.counter}}')" class="w3-button w3-white w3-white w3-left-align">...</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% for comment in res_info.rev_comment %}
+            <p id="{{res_info.res_name}}{{forloop.counter}}" style="display:none;">{{comment}}</p>
+            {% endfor %}
+            {% empty %} <center class="res_name">검색결과가 존재하지 않습니다 :(</center>
+            {% endfor %}
+            {% endautoescape %}
+
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="modal_close">&times;</span>
+                <p id="modal_content"></p>
+            </div>
+
+        </div>
+        <!-- End of Modal-->
+
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var modal_text = document.getElementById("modal_content");
+        var modal_close_btn = document.getElementById("modal_close");
+        function myFunction(id) {
+            modal_text.innerHTML = document.getElementById(id).innerHTML
+            modal.style.display = "block";
+        }
+        modal_close_btn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+    </script>
+
+</body>

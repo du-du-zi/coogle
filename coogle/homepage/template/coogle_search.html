@@ -1,0 +1,61 @@
+{% load static %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Nanum+Pen+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <title>Coogle</title>
+    <link rel="stylesheet" href='{% static "css/style.css" %}' type="text/css" />
+
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <h1>
+            <span>C</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </h1>
+        <center>
+            <div class="note">요리를 검색하다 <i class="fas fa-utensils" style="color:gray"></i></div>
+        </center>
+        <br></br>
+        <center>
+            <form action='/page' method="GET">
+                {% csrf_token %}
+                <div class="search">
+                    <i class="fas fa-search" type="text" placeholder="&#61442;"></i>
+                    <input id="main" type="text" name="search_key">
+                    <i class="fas fa-keyboard"></i>
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </form>
+
+            <div class="boxs">
+                <input id="sub1" type="button" class="box" value="Coogle 검색">
+                <input id="sub2" type="button" class="box" value="I'm Still Hungry">
+            </div>
+            <div class="ex">HOT6 제공 서비스: <span style="color:rgb(0, 0, 190)">Korean</span></div>
+        </center>
+        <br></br>
+
+
+
+
+</body>
+
+</html>
